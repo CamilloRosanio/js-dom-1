@@ -13,26 +13,28 @@ Per fare questo bonus potremmo aver bisogno di del metodo string.includes() */
 
 
 
-
-
-
-// HTML**********************************
-
-// costruisco l'HTML
-
-// uso un solo tag IMG e ci metto la lampadina spenta
-
-// creo un bottone
-
-
-// JS****************************************
-
 // Dichiaro prima di tutto delle costanti dove prendo le entità dall'HTML tramite ID/Classe/Altro
+const myButton = document.getElementById('myButton');
+const myLamp = document.getElementById('myLamp');
 
-// estraggo le proprietà che mi servono e verifico con console.log
+// Definisco la FUNZIONE che dovrà svolgere il mio bottone. In questo caso mi serve cambiare il src="" del tag img.
+// Al contempo, se voglio cambiare la scritta al bottone devo modificare il suo Inner Text insieme al src="" dell'img.
+myButton.addEventListener('click', () => {
+    const lampSrc = myLamp.getAttribute('src');
+    console.log(lampSrc);
 
-// in questo caso mi serve il src="" del tag immagine
+    if (lampSrc.includes('./img/white_lamp.png')) {
+        myLamp.setAttribute('src', './img/yellow_lamp.png');
+        myButton.innerText('Spegni');
+    } else if (lampSrc.includes('./img/yellow_lamp.png')) {
+        myLamp.setAttribute('src', './img/white_lamp.png')
+        myButton.innerText('Accendi');
+    }
+    }
+)
 
-// in base al click del bottone, cambio il src dell'immagine switchando tra l'uno e l'altro
+// Aggiungo un EventListener al bottone, che nello specifico ascolti i Click (esistono categorie predefinite di eventi, non è un valore testuale casuale).
+// Definisco la funzione che dovrà svolgere il bottone una volta ascoltato il Click.
+
 
 // al contempo, in base al SRC dell immagine cambio la scritta del bottone
