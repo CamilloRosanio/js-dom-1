@@ -28,10 +28,15 @@ myButton.addEventListener('click', () => {
 
     if (lampSrc.includes('./img/white_lamp.png')) {
         myLamp.setAttribute('src', './img/yellow_lamp.png');
-
+        myButton.innerText = 'Spegni';
     } else if (lampSrc.includes('./img/yellow_lamp.png')) {
         myLamp.setAttribute('src', './img/white_lamp.png')
-
+        myButton.innerText = 'Accendi';
     }
     }
 )
+
+/* CORREZIONE
+Per richiamare un attributo di un elemento HTML richiamato in JS, basta inserire la costante dell'Elemento,
+in questo caso una delle due assegnate sopra ad esempio, e poi inserire "." + "(attributo)".
+Mettendo "=" dopo l'attributo permette di settare il suo valore.
